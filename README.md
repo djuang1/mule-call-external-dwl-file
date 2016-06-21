@@ -1,7 +1,7 @@
 # Mule Example - Load External DataWeave *.dwl File
 
 ## Overview
-This example Mule project shows how to load an external DataWeave *.dwl file that can be changed during runtime. The dw() function loads the external DataWeave script
+This example Mule project shows how to load an external DataWeave *.dwl file. It uses the Mule Requester to load the *.dwl file into a Flow Variable and then calls the dw() function. You can change the *.dwl file contents during runtime and have the changes be applied without having the stop and start the application.
 
 ## Components
 * MEL DataWeave function
@@ -10,7 +10,7 @@ This example Mule project shows how to load an external DataWeave *.dwl file tha
 ## Requirements
 * Mule 3.8
 * Java 8
-* Mule Requester - https://github.com/mulesoft/mule-module-requester
+* Mule Requester
 
 ## Setup
 1. Import project
@@ -23,3 +23,4 @@ This example Mule project shows how to load an external DataWeave *.dwl file tha
 
 ## Resources
 * DW function - https://docs.mulesoft.com/mule-user-guide/v/3.8/mel-dataweave-functions
+* Mule Requester - https://github.com/mulesoft/mule-module-requester
