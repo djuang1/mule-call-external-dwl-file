@@ -18,7 +18,7 @@ This example Mule project shows how to load an external DataWeave *.dwl file. It
 3. Run project
 4. Navigate to http://localhost:8081/run in your browser
 5. Open the 'file.dwl' file and change the 'full_name' to be Lastname, Firstname 
-    * e.g. full_name: $.first_name ++ " " ++ $.last_name,
+    * e.g. full_name: $.last_name ++ "," ++ $.first_name,
 5. Reload http://localhost:8081/run in your browser
 
 ## Resources
