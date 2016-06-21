@@ -1,4 +1,4 @@
-# Mule Example - DataWeave dw() Function Call on External *.dwl File
+# Mule Example - DataWeave dw() Function Call on a *.dwl File
 
 ## Overview
 This example Mule project shows how to use the DataWeave dw() function on an external *.dwl file. It uses the Mule Requester to load the *.dwl file into a Flow Variable and then calls the dw() function. You can change the *.dwl file contents during runtime and have the changes be applied without having the stop and start the application.
