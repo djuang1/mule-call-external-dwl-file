@@ -22,6 +22,8 @@ payload map {
 	record: $.record_number ++ "_" ++ $.record_id
 }
 	]]></dw:set-payload>
+            <dw:set-variable resource="classpath:file2.dwl" variableName="test"/>
         </dw:transform-message>
+        <logger level="INFO" doc:name="Logger"/>
     </flow>
 </mule>

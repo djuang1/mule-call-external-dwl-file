@@ -16,12 +16,6 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
 	<http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
 	<mulerequester:config name="Mule_Requester" doc:name="Mule Requester"/>
 	<file:connector name="File" doc:name="connector" autoDelete="false" streaming="true" validateConnections="true"/>
-
-	
-    <flow name="getDWLFile" >
-        <mulerequester:request config-ref="Mule_Requester" resource="file:///Users/dejimjuang/Workspace/mulesoft/hl7/call-external-dwl-file/src/main/resources/file.dwl" doc:name="Mule Requester"/>
-        <byte-array-to-string-transformer doc:name="Byte Array to String"/>
-    </flow>
     
     <flow name="external-dwl-fileFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/run" doc:name="HTTP"/>
@@ -32,6 +26,10 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
         <set-property propertyName="Content-Type" value="application/json" mimeType="application/json" doc:name="Property"/>
         <set-payload value="#[dw(flowVars.dwScript,&quot;application/json&quot;)]" doc:name="Apply dw() Function"/>
         <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="getDWLFile">
+        <mulerequester:request config-ref="Mule_Requester" resource="file:///Users/dejimjuang/Workspace/mulesoft/hl7/call-external-dwl-file/src/main/resources/file.dwl" doc:name="Mule Requester"/>
+        <byte-array-to-string-transformer doc:name="Byte Array to String"/>
     </flow>
 
 </mule>
